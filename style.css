@@ -1,24 +1,20 @@
 body {
-    background-image: url("img11.jpg");
     background-color: #cccccc;
 }
 
-.container{
-    padding: 20px;
+#charts{
+    position:absolute;
+    left:1100px; 
+    top:100px;
 }
-
-.container2{
-    position: relative;;
+.container{
+    padding-right: 10px;
+    position:absolute;
+    left:20px; 
+    top:50px;
 }
 
 tr{
     text-align: center;
     vertical-align: middle;
-}
-
-
-.navbar-custom .navbar-text {
-    background-color: black;
-    opacity: 80%;
-    color: whitesmoke;
 }

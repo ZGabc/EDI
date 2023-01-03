@@ -16,12 +16,13 @@
 <body>
 
   <div class="d-flex sticky-top text-center">
-    <div class="p-2 bg-info flex-fill">Amanda Miśkiewicz</div>
-    <div class="p-2 bg-warning flex-fill">Jakub Otto</div>
-    <div class="p-2 bg-primary flex-fill">Zofia Ostrowska</div>
+    <div class="p-2 bg-primary-subtle flex-fill">Amanda Miśkiewicz</div>
+    <div class="p-2 bg-primary-subtle flex-fill">Jakub Otto</div>
+    <div class="p-2 bg-primary-subtle flex-fill">Zofia Ostrowska</div>
   </div>
   
-  <div class="container">
+
+  <div class="container col-8">
   <table class="table table-bordered">
     <thead class="table-dark">
       <tr>
@@ -36,18 +37,21 @@
         <th scope="col">Price</th>
       </tr>
     </thead>
-    <tbody id="table-body">
+      <tbody id="table-body">
       
 
       </tbody>
-    </table>
+  </table>
   </div>
+
   <div id="charts">
     <p>Chart showing the size in cm of the first 10 plants</p>
     <canvas id="chart1"></canvas>
     <p>Chart showing the number of plants with a given lifespan</p>
     <canvas id="chart2"></canvas>
   </div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
