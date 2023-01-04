@@ -3,15 +3,24 @@ body {
 }
 
 #charts{
-    position:absolute;
-    left:1100px; 
-    top:100px;
+    position: fixed;
+    left:1075px; 
+    top:60px;
 }
+
+#navbar{
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #79b5af;
+}
+
 .container{
     padding-right: 10px;
     position:absolute;
-    left:20px; 
-    top:50px;
+    left:10px; 
+    top:55px;
 }
 
 tr{
