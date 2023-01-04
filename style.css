@@ -4,26 +4,18 @@ body {
 
 #charts{
     position: fixed;
-    left:1075px; 
-    top:60px;
-}
-
-#navbar{
-    position: absolute;
-    top: 0;
-    text-align: center;
-    width: 100%;
-    background-color: #79b5af;
-}
-
-.container{
-    padding-right: 10px;
-    position:absolute;
-    left:10px; 
-    top:55px;
+    display: block;
+    clear: both;
 }
 
 tr{
     text-align: center;
     vertical-align: middle;
+}
+
+.container-fluid{
+    padding: auto;
+}
+.container:after {
+    clear: both;
 }
