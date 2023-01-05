@@ -5,7 +5,6 @@ body {
 #charts{
     position: fixed;
     display: block;
-    clear: both;
 }
 
 tr{
@@ -13,9 +12,6 @@ tr{
     vertical-align: middle;
 }
 
-.container-fluid{
-    padding: auto;
-}
-.container:after {
-    clear: both;
+.container{
+    display: inline-block
 }
