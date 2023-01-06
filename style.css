@@ -1,6 +1,7 @@
 body {
     background-image: url(img.jpg);
-
+    background-size: cover;
+    background-position: center; 
 }
 
 #charts{
@@ -30,7 +31,7 @@ th {
 }
 
 #content {
-    height: 666px;
+    height: 95vh;
     overflow-y: auto;
     padding: auto;
 }
