@@ -32,9 +32,9 @@ th {
 }
 
 #content {
-    height: 95vh;
+    height: 93vh;
     overflow-y: auto;
-    padding: auto;
+    padding-right: auto;
 }
 .table{
     background-color: #D5D5D5;
