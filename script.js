@@ -20,6 +20,9 @@ function displayJSON(file){
 
       document.getElementById('table-body').innerHTML = tableData;
 
+
+      let chart1;
+      let chart2;
       //chart1
       let labels = data.slice(0, 10).map(item => item.plant_common_name); //slice bo pierwsze 10 
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
@@ -53,7 +56,7 @@ function displayJSON(file){
     
         let ctx2 = document.getElementById('chart2').getContext('2d');
         if (!chart2) {
-          chart2 = new chart(ctx2, {
+          chart2 = new Chart(ctx2, {
             type: 'doughnut',
             data: {
               labels: lab,
