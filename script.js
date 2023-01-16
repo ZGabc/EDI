@@ -29,7 +29,7 @@ function displayJSON(file){
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
 
       let ctx = document.getElementById('chart1').getContext('2d'); //ctx-context
-      chart1 = new chart2(ctx, {
+      chart1 = new chart1(ctx, {
         type: 'bar',
         data: {
           labels: labels,
