@@ -21,14 +21,15 @@ function displayJSON(file){
       document.getElementById('table-body').innerHTML = tableData;
 
       //chart1
+      if (chart1) {
+        chart1.destroy();
+      }
       let chart1;
       let labels = data.slice(0, 10).map(item => item.plant_common_name); //slice bo pierwsze 10 
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
 
       let ctx = document.getElementById('chart1').getContext('2d'); //ctx-context
-      if (chart1) {
-        chart1.destroy();
-      }
+      
       chart1 = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -41,6 +42,9 @@ function displayJSON(file){
       });
 
       // chart2
+      if (chart2) {
+        chart2.destroy();
+      } 
       let chart2;
       let lifespanCounts = data.reduce((counts, plant) => {
           counts[plant.lifespan] = (counts[plant.lifespan] || 0) + 1;
@@ -51,9 +55,6 @@ function displayJSON(file){
         let val = Object.values(lifespanCounts);
     
         let ctx2 = document.getElementById('chart2').getContext('2d');
-        if (chart2) {
-        chart2.destroy();
-        } 
         chart2 = new Chart(ctx2, {
           type: 'doughnut',
           data: {
