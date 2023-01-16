@@ -25,16 +25,22 @@ function displayJSON(file){
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
 
       let ctx = document.getElementById('chart1').getContext('2d'); //ctx-context
-      let chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: 'Size in cm',
-            data: values
-          }]
-        }
-      });
+      if (!chart1) {
+        chart1 = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Size in cm',
+              data: values
+            }]
+          }
+        });
+      } else {
+        chart1.data.labels = labels;
+        chart1.data.datasets[0].data = values;
+        chart1.update();
+      }
 
       // chart2
       let lifespanCounts = data.reduce((counts, plant) => {
@@ -46,16 +52,22 @@ function displayJSON(file){
         let val = Object.values(lifespanCounts);
     
         let ctx2 = document.getElementById('chart2').getContext('2d');
-        let chart2 = new Chart(ctx2, {
-          type: 'doughnut',
-          data: {
-            labels: lab,
-            datasets: [{
-              label: 'Plant Count',
-              data: val,
-            }]
-          }
-        });
+        if (!chart2) {
+          chart2 = new chart(ctx2, {
+            type: 'doughnut',
+            data: {
+              labels: lab,
+              datasets: [{
+                label: 'Plant Count',
+                data: val,
+              }]
+            }
+          });
+        } else {
+          chart2.data.labels = lab;
+          chart2.data.datasets[0].data = val;
+          chart2.update();
+        }
     });
 };
   
