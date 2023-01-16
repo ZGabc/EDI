@@ -20,32 +20,32 @@ function displayJSON(file){
 
       document.getElementById('table-body').innerHTML = tableData;
 
-
-      let chart1;
-      let chart2;
       //chart1
+      let chart1;
+      if (chart1) {
+        chart1.destroy();
+      }
       let labels = data.slice(0, 10).map(item => item.plant_common_name); //slice bo pierwsze 10 
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
 
       let ctx = document.getElementById('chart1').getContext('2d'); //ctx-context
-      if (!chart1) {
-        chart1 = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: 'Size in cm',
-              data: values
-            }]
-          }
-        });
-      } else {
-        chart1.data.labels = labels;
-        chart1.data.datasets[0].data = values;
-        chart1.update();
-      }
+      chart1 = new chart2(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Size in cm',
+            data: values
+          }]
+        }
+      });
 
       // chart2
+      let chart2;
+      if (chart2) {
+        chart2.destroy();
+      } 
+    
       let lifespanCounts = data.reduce((counts, plant) => {
           counts[plant.lifespan] = (counts[plant.lifespan] || 0) + 1;
           return counts;
@@ -55,22 +55,16 @@ function displayJSON(file){
         let val = Object.values(lifespanCounts);
     
         let ctx2 = document.getElementById('chart2').getContext('2d');
-        if (!chart2) {
-          chart2 = new Chart(ctx2, {
-            type: 'doughnut',
-            data: {
-              labels: lab,
-              datasets: [{
-                label: 'Plant Count',
-                data: val,
-              }]
-            }
-          });
-        } else {
-          chart2.data.labels = lab;
-          chart2.data.datasets[0].data = val;
-          chart2.update();
-        }
+        chart2 = new chart2(ctx2, {
+          type: 'doughnut',
+          data: {
+            labels: lab,
+            datasets: [{
+              label: 'Plant Count',
+              data: val,
+            }]
+          }
+        });
     });
 };
   
