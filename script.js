@@ -29,7 +29,7 @@ function displayJSON(file){
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
 
       let ctx = document.getElementById('chart1').getContext('2d'); //ctx-context
-      chart1 = new Chart1(ctx, {
+      let chart1 = new Chart1(ctx, {
         type: 'bar',
         data: {
           labels: labels,
@@ -55,7 +55,7 @@ function displayJSON(file){
         let val = Object.values(lifespanCounts);
     
         let ctx2 = document.getElementById('chart2').getContext('2d');
-        chart2 = new Chart2(ctx2, {
+        let chart2 = new Chart2(ctx2, {
           type: 'doughnut',
           data: {
             labels: lab,
