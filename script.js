@@ -1,4 +1,4 @@
-fetch('https://my.api.mockaroo.com/plants.json?key=b98a4910')
+fetch('plants.json')
   .then(response => response.json())
   .then(data => { //data to wszystkie dane z api w formacie json
     let tableData = '';
