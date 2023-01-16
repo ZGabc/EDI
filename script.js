@@ -1,4 +1,4 @@
-function displayJSON(file)  
+function displayJSON(file){
   fetch(file)
     .then(response => response.json())
     .then(data => { //data to wszystkie dane z api w formacie json
@@ -57,5 +57,7 @@ function displayJSON(file)
           }
         });
     });
+}
+  
 
 
