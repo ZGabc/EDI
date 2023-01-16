@@ -1,5 +1,5 @@
 function displayJSON(file)  
-  fetch('file')
+  fetch(file)
     .then(response => response.json())
     .then(data => { //data to wszystkie dane z api w formacie json
       let tableData = '';
