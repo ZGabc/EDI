@@ -27,8 +27,8 @@ function displayJSON(file){
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
 
       let ctx = document.getElementById('chart1').getContext('2d'); //ctx-context
-      if (chart1!=null) {
-        chart1.destroy();
+      if (Chart.getChart("chart1")){
+          Chart.getChart("chart1").destroy();
       }
       chart1 = new Chart(ctx, {
         type: 'bar',
@@ -54,8 +54,8 @@ function displayJSON(file){
         let val = Object.values(lifespanCounts);
     
         let ctx2 = document.getElementById('chart2').getContext('2d');
-        if (chart2!=null) {
-        chart2.destroy();
+        if (Chart.getChart("chart2")){
+          Chart.getChart("chart2").destroy();
         }
         chart2 = new Chart(ctx2, {
           type: 'doughnut',
