@@ -55,7 +55,7 @@ function displayJSON(file){
     
         let ctx2 = document.getElementById('chart2').getContext('2d');
         if (chart2!=null) {
-        chart1.destroy();
+        chart2.destroy();
         }
         chart2 = new Chart(ctx2, {
           type: 'doughnut',
