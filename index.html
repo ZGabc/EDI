@@ -22,15 +22,11 @@
     </div>
   </div>
 
-
   <div id="content" class="container-fluid text-center">
     <div class="row">
       <div class="container col-8">
-        <button id="fetch-button1" onclick="displayJSON('plants.json')">Plik1</button>
-        <button id="fetch-button2" onclick="displayJSON('plants1.json')">Plik2</button>
-        <button id="fetch-button3" onclick="displayJSON('plants2.json')">Plik3</button>
         <table class="table table-hover table-borderless">
-          <thead class=" table-dark sticky-top col-8">
+          <thead class="table-dark sticky-top col-8">
             <tr>
               <th scope="col">Plant Common Name</th>
               <th scope="col">Plant Scientific Name</th>
@@ -45,16 +41,23 @@
           </thead>
             <tbody id="table-body">
 
-
             </tbody>
         </table>
       </div>
       <div class="container col-4"> 
         <div id="charts">
+
+          <div class="bt d-flex text-center">
+            <button class="fetch-button1 flex-fill" onclick="displayJSON('plants.json')">Plik 1</button>
+            <button class="fetch-button2 flex-fill" onclick="displayJSON('plants1.json')">Plik 2</button>
+            <button class="fetch-button3 flex-fill" onclick="displayJSON('plants2.json')">Plik 3</button>
+          </div>
+
           <p>Chart showing the size in cm of the first 10 plants</p>
           <canvas id="chart1"></canvas>
           <p>Chart showing the number of plants with a given lifespan</p>
           <canvas id="chart2"></canvas>
+
         </div>
       </div>
     </div>
