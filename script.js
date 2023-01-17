@@ -21,10 +21,11 @@ function displayJSON(file){
       document.getElementById('table-body').innerHTML = tableData;
 
       //chart1
+      let chart1;
       if (chart1) {
         chart1.destroy();
       }
-      let chart1;
+      
       let labels = data.slice(0, 10).map(item => item.plant_common_name); //slice bo pierwsze 10 
       let values = data.slice(0, 10).map(item => item.size_in_cm); 
 
@@ -42,10 +43,11 @@ function displayJSON(file){
       });
 
       // chart2
+      let chart2;
       if (chart2) {
         chart2.destroy();
       } 
-      let chart2;
+      
       let lifespanCounts = data.reduce((counts, plant) => {
           counts[plant.lifespan] = (counts[plant.lifespan] || 0) + 1;
           return counts;
