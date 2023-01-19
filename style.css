@@ -68,10 +68,3 @@ button:hover{
     border: 1px solid #3e73bd;
 }
 
-.table-container {
-    max-width: 50%; 
-    float: left; 
-    position: absolute;
-    left: 0;
-}
-
